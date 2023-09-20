@@ -1,0 +1,19 @@
+.grid-container {
+    grid-template:
+        "header" 3.5rem
+        "main" 1fr
+        "footer" 100px
+        / 100vw;
+
+    > .header {
+        grid-area: header;
+    }
+
+    > .main {
+        grid-area: main;
+    }
+
+    > .footer {
+        grid-area: footer;
+    }
+}

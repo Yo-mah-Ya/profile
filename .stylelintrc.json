@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "ignoreFiles": [
+    "coverage/**/*.(css|scss|sass)",
+    ".next/**/*.(css|scss|sass)",
+    "app/[locale]/reset.scss",
+    "app/components/markdown/page.module.scss"
+  ],
+  "rules": {
+    "color-named": "never",
+    "color-no-hex": true,
+    "declaration-no-important": true,
+    "declaration-property-unit-allowed-list": {
+      "/^border|^box-shadow|^outline/": ["px"],
+      "/^margin|^padding|^gap/": ["em", "rem"],
+      "/^font-size/": ["em"]
+    },
+    "declaration-property-value-disallowed-list": {
+      "position": ["fixed"]
+    },
+    "media-feature-name-unit-allowed-list": {
+      "/^height|^width/": ["em"]
+    },
+    "selector-pseudo-class-no-unknown": true,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ],
+    "unit-allowed-list": [
+      "fr",
+      "px",
+      "%",
+      "rem",
+      "em",
+      "ms",
+      "vmin",
+      "vmax",
+      "vh",
+      "vw"
+    ]
+  }
+}
