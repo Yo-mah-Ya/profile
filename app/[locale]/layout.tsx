@@ -5,6 +5,7 @@ import layoutStyles from "./layout.module.scss";
 import "./global.css";
 import type { PageProps } from "./types";
 import type { Metadata } from "next";
+import { locales } from "../i18n/settings";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -32,6 +33,11 @@ export async function generateMetadata(): Promise<Metadata> {
         // },
     };
 }
+
+export const generateStaticParams = () =>
+    locales.map((lang) => ({
+        locale: lang,
+    }));
 
 const RootLayout = ({
     children,

@@ -1,5 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
-import { languages, fallbackLng } from "./app/i18n/settings";
+import { locales, fallbackLng } from "./app/i18n/settings";
 
 export const config = {
     matcher: [
@@ -10,7 +10,7 @@ export const config = {
          * - assets (assets)
          * - favicon.ico (favicon file)
          */
-        "/((?!_next/static|_next/image|assets|favicon.ico).*)",
+        "/((?!_next/static|_next/image|assets|favicon.ico|images).*)",
     ],
 };
 
@@ -23,7 +23,7 @@ export function middleware(request: NextRequest): NextResponse {
 
     // Redirect if locale in path is not supported
     if (
-        !languages.some((locale) =>
+        !locales.some((locale) =>
             request.nextUrl.pathname.startsWith(`/${locale}`),
         ) &&
         !request.nextUrl.pathname.startsWith("/_next")

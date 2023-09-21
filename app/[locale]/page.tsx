@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageProps } from "./types";
+import Skills from "../components/skills";
 
 export const metadata: Metadata = {
     title: "Home",
@@ -17,6 +18,7 @@ const IndexPage = async ({ params: { locale } }: PageProps) => {
                 <h3 className={`font-title-sub text-5xl font-normal`}>
                     Software Engineer
                 </h3>
+                <Skills />
             </div>
         </>
     );

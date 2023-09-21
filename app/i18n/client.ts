@@ -12,7 +12,7 @@ import {
 import resourcesToBackend from "i18next-resources-to-backend";
 // import LocizeBackend from 'i18next-locize-backend'
 import LanguageDetector from "i18next-browser-languagedetector";
-import { getOptions, languages } from "./settings";
+import { getOptions, locales } from "./settings";
 import { Logger, errorMessageOf } from "../utils";
 
 const runsOnServerSide = typeof window === "undefined";
@@ -41,7 +41,7 @@ i18next
         detection: {
             order: ["path", "htmlTag", "cookie", "navigator"],
         },
-        preload: runsOnServerSide ? languages : [],
+        preload: runsOnServerSide ? locales : [],
     })
     .catch(errorHandler);
 
