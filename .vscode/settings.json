@@ -8,6 +8,7 @@
     "node_modules": true,
     "npm-packages-offline-cache": true,
     ".next": true,
+    "out": true,
     "coverage": true
   },
   "editor.formatOnSave": true,
